@@ -10,14 +10,26 @@
     Copyright (c) 2010-2011 Elmar de Koning <edekoning@gmail.com>
 */
 
+#ifndef PSIMPL_C
+
 #include <stdint.h>
+
+typedef enum psimpl_LineDimension_
+{
+    psimpl_LineDimension_1D = 1,
+    psimpl_LineDimension_2D,
+    psimpl_LineDimension_3D
+}
+psimpl_LineDimension;
+
 
 #ifdef __cplusplus
 extern "C" {
 #endif
 
 double *psimpl_simplify_douglas_peucker(
-                                        uint8_t dimensions,
+                                        psimpl_LineDimension dimensions,
+                                        uint64_t points,
                                         double tolerance,
                                         double *original_points,
                                         double *simplified_points
@@ -26,3 +38,5 @@ double *psimpl_simplify_douglas_peucker(
 #ifdef __cplusplus
 }
 #endif
+
+#endif // #ifdef PSIMPL_C
