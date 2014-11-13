@@ -98,6 +98,7 @@
 #include <numeric>
 #include <algorithm>
 #include <cmath>
+#include <functional> // for ptr_fun, bind2nd
 
 
 /*!
